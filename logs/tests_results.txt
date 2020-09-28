@@ -1,0 +1,61 @@
+test_format_histogram (__main__.TestExercice) ... FAIL
+test_format_horizontal_histogram (__main__.TestExercice) ... ERROR
+test_get_num_letters (__main__.TestExercice) ... FAIL
+test_get_word_length_histogram (__main__.TestExercice) ... FAIL
+
+======================================================================
+ERROR: test_format_horizontal_histogram (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 83, in test_format_horizontal_histogram
+    output = [exercice.format_horizontal_histogram(exercice.get_word_length_histogram(v)).strip("\n") for v in values]
+  File "test_exercice.py", line 83, in <listcomp>
+    output = [exercice.format_horizontal_histogram(exercice.get_word_length_histogram(v)).strip("\n") for v in values]
+  File "/home/runner/work/c02-ch5-2-exercices-Charles-AntoineLaurin/c02-ch5-2-exercices-Charles-AntoineLaurin/exercice.py", line 45, in format_horizontal_histogram
+    result += LINE_CHAR * len(histogram)
+UnboundLocalError: local variable 'result' referenced before assignment
+
+======================================================================
+FAIL: test_format_histogram (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 71, in test_format_histogram
+    self.is_same_formatting(out, exp)
+  File "test_exercice.py", line 94, in is_same_formatting
+    "Pas même nombre de lignes"
+AssertionError: 1 != 11 : Pas même nombre de lignes
+
+======================================================================
+FAIL: test_get_num_letters (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 33, in test_get_num_letters
+    "Mauvais compte de lettres"
+AssertionError: Lists differ: [3, 3, 3, 2, 2, 3] != [0, 0, 0, 0, 0, 0]
+
+First differing element 0:
+3
+0
+
+- [3, 3, 3, 2, 2, 3]
++ [0, 0, 0, 0, 0, 0] : Mauvais compte de lettres
+
+======================================================================
+FAIL: test_get_word_length_histogram (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 48, in test_get_word_length_histogram
+    "Mauvais histogramme"
+AssertionError: Lists differ: [[0]] != [[0, 1, 0, 1, 1]]
+
+First differing element 0:
+[0]
+[0, 1, 0, 1, 1]
+
+- [[0]]
++ [[0, 1, 0, 1, 1]] : Mauvais histogramme
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+FAILED (failures=3, errors=1)
